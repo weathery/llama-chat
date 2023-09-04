@@ -14,17 +14,17 @@ function approximateTokenCount(text) {
 
 const VERSIONS = [
   {
-    name: "Llama 2 7B",
+    name: "Llama 2-7B",
     version: "d24902e3fa9b698cc208b5e63136c4e26e828659a9f09827ca6ec5bb83014381",
     shortened: "7B",
   },
   {
-    name: "Llama 2 13B",
+    name: "Llama 2-13B",
     version: "9dff94b1bed5af738655d4a7cbcdcde2bd503aa85c94334fe1f42af7f3dd5ee3",
     shortened: "13B",
   },
   {
-    name: "Llama 2 70B",
+    name: "Llama 2-70B",
     version: "2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
     shortened: "70B",
   },
@@ -128,37 +128,14 @@ export default function HomePage() {
   return (
     <>
       <div className="bg-slate-100 border-b-2 text-center p-3">
-        Powered by Replicate.{" "}
-        <a
-          href="https://replicate.com/blog/run-llama-2-with-an-api?utm_source=project&utm_campaign=llama2ai"
-          target="_blank"
-          className="underline"
-        >
-          Run and fine-tune Llama 2 in the cloud.
-        </a>
+       Llama v2.0 - {size.shortened}
       </div>
       <nav className="grid grid-cols-2 pt-3 pl-6 pr-3 sm:grid-cols-3 sm:pl-0">
         <div className="hidden sm:inline-block"></div>
         <div className="font-semibold text-gray-500 sm:text-center">
-          🦙 <span className="hidden sm:inline-block">Chat with</span>{" "}
-          <button
-            className="py-2 font-semibold text-gray-500 hover:underline"
-            onClick={() => setOpen(true)}
-          >
-            Llama 2 {size.shortened}
-          </button>
+          <span className="hidden sm:inline-block"></span>{" "}
         </div>
         <div className="flex justify-end">
-          <a
-            className="inline-flex items-center px-3 py-2 mr-3 text-sm font-semibold text-gray-700 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            href="https://github.com/replicate/chat"
-          >
-            <CodeBracketIcon
-              className="w-5 h-5 text-gray-500 sm:mr-2 group-hover:text-gray-900"
-              aria-hidden="true"
-            />{" "}
-            <span className="hidden sm:inline">Clone on GitHub</span>
-          </a>
           <button
             type="button"
             className="inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
@@ -196,7 +173,7 @@ export default function HomePage() {
           setSize={setSize}
         />
 
-        <ChatForm prompt={input} setPrompt={setInput} onSubmit={handleSubmit} />
+      <ChatForm prompt={input} setPrompt={setInput} onSubmit={handleSubmit} />
 
         {error && <div>{error}</div>}
 
