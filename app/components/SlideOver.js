@@ -64,11 +64,6 @@ export default function SlideOver({
                             </button>
                           </div>
                         </div>
-                        <div className="mt-1">
-                          <p className="text-sm text-gray-300">
-                            A project from Replicate.
-                          </p>
-                        </div>
                       </div>
                       <div className="flex flex-1 flex-col justify-between">
                         <div className="divide-y divide-gray-200 px-4 sm:px-6">
@@ -78,7 +73,7 @@ export default function SlideOver({
                                 htmlFor="description"
                                 className="block font-bold text-sm leading-6 text-gray-900"
                               >
-                                Llama Size
+                                Llama2 Model Size
                               </label>
 
                               <p
